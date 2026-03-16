@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HemoMetrics Pro | Clinical Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app-container">
+        
+        <header>
+            <h1>HemoMetrics Pro</h1>
+            <p>Clinical Grade Hemodynamic Analysis</p>
+            <div id="live-clock">--:--:--</div>
+        </header>
+
+        <section class="profile-section input-card">
+            <div class="input-field name-group">
+                <label for="patient-name">Patient Full Name</label>
+                <input type="text" id="patient-name" placeholder="Ahmed Ali">
+            </div>
+
+            <br>
+            <div class="gender-group">
+                <label>Biological Sex</label>
+                <div class="radio-options">
+                    <input type="radio" id="male" name="sex" value="male" checked>
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="sex" value="female">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+
+            <div class="age-group">
+                <label for="user-age">Age</label>
+                <input type="number" id="user-age" min="1" max="110" placeholder="Years">
+            </div>
+        </section>
+
+        <section class="input-dashboard">
+            <form id="vitals-form">
+                
+                <div class="input-card">
+                    <h3>Blood Pressure</h3>
+                    <div class="input-row">
+                        <div class="input-field">
+                            <label for="systolic">Systolic</label>
+                            <input type="number" id="systolic" min="50" max="300" placeholder="120">
+                        </div>
+                        <div class="input-field">
+                            <label for="diastolic">Diastolic</label>
+                            <input type="number" id="diastolic" min="30" max="200" placeholder="80">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-card">
+                    <h3>Heart Rate</h3>
+                    <div class="input-field">
+                        <label for="bpm">BPM (Heart Rate)</label>
+                        <input type="number" id="bpm" min="20" max="250" placeholder="72">
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button type="submit" id="analyze-btn">Analyze Vitals</button>
+                </div>
+
+            </form>
+        </section>
+
+        <article class="results-display" id="results-card" hidden>
+            <h2>Analysis Result</h2>
+            <div class="metric-grid">
+                <div class="metric-item">
+                    <p>MAP</p>
+                    <h3><span id="map-value">--</span> <small>mmHg</small></h3>
+                </div>
+                <div class="metric-item">
+                    <p>Pulse Pressure</p>
+                    <h3><span id="pp-value">--</span> <small>mmHg</small></h3>
+                </div>
+            </div>
+            
+            <div id="status-badge" class="badge">Category: Pending</div>
+            
+            <div class="insight-box">
+                <h4>Clinical Insight:</h4>
+                <p id="clinical-insight-text">Ready for analysis...</p>
+            </div>
+        </article>
+
+        <aside class="history-sidebar">
+            <h3>Recent Scans</h3>
+            <ul id="history-list">
+                </ul>
+        </aside>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
